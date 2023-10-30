@@ -79,15 +79,16 @@
         updateBannerVisibility();
       }
 
+      /*ここを変更してCANVASの中身を変更*/
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/WebOnlineTestVer02.loader.js";
+      var loaderUrl = buildUrl + "/Canvus_test.loader.js";
       var config = {
-        dataUrl: buildUrl + "/WebOnlineTestVer02.data",
-        frameworkUrl: buildUrl + "/WebOnlineTestVer02.framework.js",
-        codeUrl: buildUrl + "/WebOnlineTestVer02.wasm",
+        dataUrl: buildUrl + "/Canvus_test.data",
+        frameworkUrl: buildUrl + "/Canvus_test.framework.js",
+        codeUrl: buildUrl + "/Canvus_test.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
-        productName: "PUN Test",
+        productName: "SHGame",
         productVersion: "0.1.0",
         showBanner: unityShowBanner,
       };
