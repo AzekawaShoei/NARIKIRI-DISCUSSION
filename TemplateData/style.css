@@ -87,7 +87,7 @@ footer {
     border-radius: 10px;
     outline: none;
     box-sizing: border-box;
-    transition: 0.3s;
+    resize: none;
 }
 
 #button-area {
@@ -104,18 +104,61 @@ footer {
     max-width: calc(100% / 5 - 1%);
     margin-left: 1%;
     height: 100%;
+    font-weight: 900;
+    font-size: 15px;
+    color: #fff;
+    cursor: pointer;
+    text-align:center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #remote-media-area {
     background-color: black;
 }
 
-#avoid-button {
-    border: 4px solid rgba(255, 255, 255, 0.6);
+#void-button {
+    border: none;
+    border-radius: 5px;
+    background-color: #353535;
 }
 
-#user-button {
-    border: 4px solid rgba(255, 14, 203, 0.6);
+.user-button-before {
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 5px;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    background-image: linear-gradient(
+      to right,
+      #33DAFF,
+      #33C2FF,
+      #339DFF,
+      #3378FF
+    );
+}
+  
+.user-button-before:active {
+    background-position: 100% 0;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+.user-button-before:focus {
+    outline: none;
+}
+
+.user-button-after {
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 5px;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    background-color: #e64c25;
 }
 
 

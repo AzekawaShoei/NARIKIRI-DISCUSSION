@@ -1,5 +1,8 @@
 const { nowInSec, SkyWayAuthToken, SkyWayContext, SkyWayRoom, SkyWayStreamFactory, uuidV4 } = skyway_room;
 
+var userButtonCount = 0;
+
+
 
 //SkywayAuthTokenクラスを使用して、アクセストークン（token）を生成しています。
 //このトークンは、Skywayサーバーへのアクセス権を設定します。
@@ -81,11 +84,19 @@ const token = new SkyWayAuthToken({
       if (publication.publisher.id === me.id) return;
 
       const subscribeButton = document.createElement('button');
-      subscribeButton.id = "user-button";
+      if(userButtonCount > 5) {
+        userButtonCount = 1;
+      } else {
+        userButtonCount++;
+      }
+      subscribeButton.id = "user-button" + userButtonCount;
+      subscribeButton.className = "user-button-before";
       subscribeButton.textContent = `${publication.publisher.id}: ${publication.contentType}`;
       buttonArea.appendChild(subscribeButton);
 
       subscribeButton.onclick = async () => {
+        subscribeButton.className = "user-button-after";
+        console.log("class name is changed");
         const { stream } = await me.subscribe(publication.id);
 
         let newMedia;
@@ -112,3 +123,6 @@ const token = new SkyWayAuthToken({
     room.onStreamPublished.add((e) => subscribeAndAttach(e.publication));
   };
 })();
+
+
+
