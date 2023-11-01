@@ -2,6 +2,26 @@ const { nowInSec, SkyWayAuthToken, SkyWayContext, SkyWayRoom, SkyWayStreamFactor
 
 var userButtonCount = 0;
 
+const copy = () => {
+  // テキストエリアの文字を取得
+  const txt = document.getElementById("memo-space").value;
+  console.log(txt);
+  // クリップボードにコピー
+  navigator.clipboard.writeText(txt);
+};
+
+const save = () => {
+  const txt = document.getElementById('memo-space').value;
+  if (!txt) { return; }
+  // 文字列をBlob化
+  const blob = new Blob([txt], { type: 'text/plain' });
+  // ダウンロード用のaタグ生成
+  const a = document.createElement('a');
+  a.href =  URL.createObjectURL(blob);
+  a.download = 'sample.txt';
+  a.click();
+};
+
 
 
 //SkywayAuthTokenクラスを使用して、アクセストークン（token）を生成しています。
