@@ -22,6 +22,20 @@ const save = () => {
   a.click();
 };
 
+const zoomin = () => {
+  const txt = document.getElementById("memo-space");
+  var data = txt.style.fontSize;
+  var res = Number(data.replace(/[^0-9]/g, ''));
+  txt.style.fontSize = String((res+10) + "px");
+};
+
+const zoomout = () => {
+  const txt = document.getElementById("memo-space");
+  var data = txt.style.fontSize;
+  var res = Number(data.replace(/[^0-9]/g, ''));
+  txt.style.fontSize = String((res-10) + "px");
+};
+
 
 
 //SkywayAuthTokenクラスを使用して、アクセストークン（token）を生成しています。
