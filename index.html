@@ -26,9 +26,9 @@
       </div>
       <div id="unity-warning"> </div>
       <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
+        <!-- <div id="unity-webgl-logo"></div> -->
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">NARIKIRI-DISCUSSION</div>
+        <!-- <div id="unity-build-title">NARIKIRI-DISCUSSION</div> -->
       </div>
     </div>
 
@@ -85,11 +85,11 @@
 
       /*ここを変更してCANVASの中身を変更*/
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Canvus_test.loader.js";
+      var loaderUrl = buildUrl + "/Move_test.loader.js";
       var config = {
-        dataUrl: buildUrl + "/Canvus_test.data",
-        frameworkUrl: buildUrl + "/Canvus_test.framework.js",
-        codeUrl: buildUrl + "/Canvus_test.wasm",
+        dataUrl: buildUrl + "/Move_test.data",
+        frameworkUrl: buildUrl + "/Move_test.framework.js",
+        codeUrl: buildUrl + "/Move_test.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "SHGame",
@@ -126,7 +126,7 @@
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
         canvas.style.width = "100%";
-        canvas.style.height = "460px";
+        canvas.style.height = "500px";
       }
 
       loadingBar.style.display = "block";
